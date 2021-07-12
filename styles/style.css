@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/world.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-family: 'Fredoka One', cursive;
+}
+
+.quiz-area {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-area .quiz-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,1) 100%);
+    background-clip: padding-box;
+    border: 5px dashed rgba(0,0,0,0.4);
+    width: min-content;
+    margin: auto;
+    padding: 3rem;
+    border-radius: 2rem;
+}
+
+.quiz-area .quiz-box h1 {
+    margin-bottom: 2rem;
+    text-shadow: 5px 5px 3px #47FFFF, -5px -5px 3px #FF85F9;
+    color: rgb(20,20,20);
+    transition: .5s;
+}
+
+.blink {
+    text-shadow: 5px 5px 3px rgba(63,251,97,1), -5px -5px 3px rgba(251,252,70,1) !important;
+}
+
+.quiz-area .quiz-box .quiz .card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.quiz-area .quiz-box .quiz .card {
+    width: 10vmax;
+    height: 10vmax;
+    min-height: 100px;
+    min-width: 100px;
+    max-height: 300px;
+    max-width: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.quiz-area .quiz-box .quiz .card .front, .quiz-area .quiz-box .quiz .card .back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2rem;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+    color: rgb(30,30,30);
+    position: absolute;
+}
+
+.quiz-area .quiz-box .quiz .card .front {
+    background: linear-gradient(rgba(71,255,255,1), rgba(255,133,249,1));
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
+.quiz-area .quiz-box .quiz .card .back {
+    background: linear-gradient(0deg, rgba(63,251,97,1) 0%, rgba(251,252,70,1) 100%);
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.quiz-area .quiz-box .quiz {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    align-items: stretch;
+    justify-content: center;
+}
